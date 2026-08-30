@@ -605,14 +605,14 @@ function openDetail(id){
         <div class="box"><div class="v">${p.age_score}</div><div class="k">年龄分</div></div>
         <div class="box"><div class="v">${p.badge_score}</div><div class="k">徽章分</div></div>
         <div class="box"><div class="v">${p.badge_value_score}</div><div class="k">徽章性价比</div></div>
-        <div class="box"><div class="v">${p.perf}</div><div class="k">现实表现分</div></div>
+        <div class="box"><div class="v">${p.perf}</div><div class="k">每36分钟效率</div></div>
       </div>
       <div class="modal-sec">📊 场均 · 场次 ${p.gp} · 年龄 ${p.age}</div>
       <div class="kv">
         <div class="box"><div class="v">${p.pts}</div><div class="k">得分</div></div>
         <div class="box"><div class="v">${p.reb}</div><div class="k">篮板</div></div>
         <div class="box"><div class="v">${p.ast}</div><div class="k">助攻</div></div>
-        <div class="box"><div class="v">${p.ts_pct}%</div><div class="k">真实命中率</div></div>
+        <div class="box"><div class="v" style="${p.ts_pct >= 62 ? 'color:var(--good)' : (p.ts_pct <= 52 ? 'color:var(--bad)' : '')}">${p.ts_pct}%</div><div class="k">真实命中率</div></div>
       </div>
       ${p.signal ? `<div class="modal-sec">📰 新闻信号：${sigHtml(p.signal)}</div>` : ""}`;
   } else {
